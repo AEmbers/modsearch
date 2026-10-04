@@ -1,6 +1,6 @@
 {
   "name": "@liustack/modsearch",
-  "version": "5.10.5",
+  "version": "5.10.6",
   "description": "The strongest free web search plugin for coding agents. Plug-in web search, X search, and page fetch for models without native web access. Free out of the box: no signup, no API key (Firecrawl keyless, 1,000 free credits/month)",
   "type": "module",
   "bin": {
@@ -53,7 +53,8 @@
   },
   "homepage": "https://github.com/liustack/modsearch#readme",
   "engines": {
-    "node": ">=22.13"
+    "node": ">=22.13",
+    "dsh": ">=0.2.0-rc.1"
   },
   "exports": {
     ".": "./dsh/index.js",
@@ -69,8 +70,16 @@
       "inject": [],
       "platform": "web",
       "immediately": true
-    }
-  },
+    },
+      "compatibility": {
+        "dsh": ">=0.2.0-rc.1",
+        "dshReleases": {
+          "0.2.0-rc.1": "compatible",
+          "0.2.0-rc.2": "compatible",
+          "0.2.1-alpha.1": "compatible"
+        }
+      }
+    },
   "dependencies": {
     "commander": "^13.1.0",
     "undici": "^7.29.0"
